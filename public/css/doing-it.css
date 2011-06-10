@@ -14,3 +14,11 @@ body {
   min-height: 500px;
 	padding: 5px;
 }
+.legend {
+	margin: 0 auto;
+	margin-top: 30px;
+	background-color: #fff;
+	width: 400px;
+	padding: 10px;
+	border-radius: 5px;
+}
