@@ -57,10 +57,18 @@
 					var text = $.trim($row.text());
 					if(text.charAt(text.length-1) === ':') {
 						$row.addClass('group');
-						$row.find('~ .task').addClass('indent');
+						var $nextSiblings = $row.find('~ *');
+						for (var i=0; i < $nextSiblings.length; i++) {
+							var $currentSibling = $nextSiblings.filter(':eq('+i+')');
+							if(!$currentSibling.text()) {
+								break;
+							}
+							$currentSibling.addClass('indent');
+						};
 					}
 				}
 			});
+			rows().filter('.group').removeClass('indent');
 		};
 		
 		var renderUnknown = function($row) {
@@ -99,6 +107,6 @@
 	$(function() {
 		var doingIt = DoingIt($('#editor'));
 		doingIt.init();
-		$('#editor').live('keydown',doingIt.doIt);
+		$('#editor').live('keyup',doingIt.doIt);
 	});
 })(jQuery,_);
