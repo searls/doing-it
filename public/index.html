@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-  <title>Doing It</title>
+  <title>doing it</title>
   <link rel="stylesheet" type="text/css" href="css/doing-it.css" />
 
   <script type="text/javascript" src="js/vendor/underscore-min.js"></script>
@@ -10,20 +10,23 @@
 </head>
 <body>
   <div class="title">doing it</div>
-  <div id="editor" contenteditable></div>
+  <div id="editor" class="content" contenteditable></div>
   <div class="legend">
     <h1>Usage</h1>
     <div class="section">
-      <div><em>Doing It</em> is a non-app for keeping track of tasks. In the editor above, just type stuff and it styles it for you. Each line you type represents a task, a group of tasks, or a comment. It will saves your tasks too. (Go ahead! Close the window, come back, and your tasks will still be here, just as you left them)</div>
+      <div>
+        <p>Welcome to <em>doing it</em>, a non-app for keeping track of tasks. In the editor above, just type away and it will style things for you. Each line you type represents a task, a group of tasks, or a comment.</p>
+        <p>It also saves your tasks as you type. (Go ahead! Close the window, come back, and your tasks will still be here, just as you left them.)</p>
+      </div>
     </div>
     <div class="sub section">
       <h2>Tasks</h2>
-      <span>The first character of each line indicates the status of the task.</span>
-      <ul>
-          <li><span class="pending">- an unfinished task</span></li>
-          <li><span class="finished">/ a finished task</span></li>
-          <li><span class="blocked"># a blocked task</span></li>
-          <li><span class="important">! a really important task</span></li>
+      <span>The first character of each line indicates the type of the task. The different task types are: </span>
+      <ul class="task-types">
+          <li><span class="task-char">-</span><span class="task pending">an unfinished task</span></li>
+          <li><span class="task-char">#</span><span class="task blocked">a blocked task</span></li>
+          <li><span class="task-char">!</span><span class="task important">a really important task</span></li>
+          <li><span class="task-char">/</span><span class="task finished">a finished task</span></li>
       </ul>
     </div>
     <div class="sub section">
@@ -43,11 +46,16 @@
     <div class="sub section">
       <h2>Caveats</h2>
       <ul>
-        <li>Sorry, but <em>Doing It</em> will only work with Safari and Chrome</li>
+        <li>Sorry, but <em>doing it</em> will only work in Webkit browsers, like <a href="http://www.apple.com/safari/">Safari</a> or <a href="http://google.com/chrome">Chrome</a></li>
       </ul>
     </div>
     <div class="sub section">
       <div class="who">brought to you by <a href="http://twitter.com/searls">@searls</a> via <a href="http://pillartechnology.com">pillar</a></div>
+    </div>
+  </div>
+  <div class="hidden">
+    <div id="apology" class="content">
+      Sincerest apologies, but <em>doing it</em> isn't cool enough to handle your browser. You'll need <a href="http://www.apple.com/safari/">Safari</a> or <a href="http://google.com/chrome">Chrome</a>.
     </div>
   </div>
 </body>

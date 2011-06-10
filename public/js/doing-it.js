@@ -33,13 +33,16 @@
 		
 		var decorateLines = function() {
 			removeAllExistingClasses()
+			render(tasks);
+			render(groups);
+			render(comments);
+			rows().filter('.group').removeClass('indent');
+		};
+		
+		var render = function(thingToRender) {
 			rows().each(function(i,el) {
-				var $row = $(el);
-				renderTask($row);
-				renderComment($row);
+				thingToRender($(el));
 			});
-			
-			renderGroups();
 		};
 		
 		var removeAllExistingClasses = function() {
@@ -49,37 +52,35 @@
 			});
 		}
 		
-		var renderTask = function($row) {
+		var tasks = function($row) {
 			var type = self.types[$row.text().charAt(0)];
 			if(type) {
 				$row.addClass(type).addClass('task');
 			}
 		};
 		
-		var renderGroups = function() {
-			rows().each(function(i,el) {
-				var $row = $(el);
-				if(!$row.hasClass('task')) {
-					var text = $.trim($row.text());
-					if(text.charAt(text.length-1) === ':') {
-						$row.addClass('group');
-						var $nextSiblings = $row.find('~ *');
-						for (var i=0; i < $nextSiblings.length; i++) {
-							var $currentSibling = $nextSiblings.filter(':eq('+i+')');
-							if(!$currentSibling.text()) {
-								break;
-							} else {
-								$currentSibling.addClass('indent');
-							}
-						};
+		var groups = function($row) {
+			if(!$row.hasClass('task') && looksLikeAGroup($row)) {
+				$row.addClass('group');
+				var $nextSiblings = $row.find('~ *');
+				for (var i=0; i < $nextSiblings.length; i++) {
+					var $currentSibling = $nextSiblings.filter(':eq('+i+')');
+					if(!$currentSibling.text()) {
+						break;
+					} else {
+						$currentSibling.addClass('indent');
 					}
-				}
-			});
-			rows().filter('.group').removeClass('indent');
+				};
+			}
 		};
 		
-		var renderComment = function($row) {
-			if(!$row.attr('class')) {
+		var looksLikeAGroup = function($row) {
+			var text = $.trim($row.text());
+			return text.charAt(text.length-1) === ':';
+		};
+		
+		var comments = function($row) {
+			if(!$row.hasClass('task') && !$row.hasClass('group')) {
 				$row.addClass('comment');
 			}
 		}
@@ -112,8 +113,13 @@
 	};
 	
 	$(function() {
-		var doingIt = DoingIt($('#editor'));
-		doingIt.init();
-		$('#editor').live('keyup',doingIt.doIt);
+		var $editor = $('#editor');
+		if($.browser.webkit) {
+			var doingIt = DoingIt($editor);
+			doingIt.init();
+			$editor.live('keyup',doingIt.doIt);
+		} else {
+			$('#editor').replaceWith($('#apology'));
+		}
 	});
 })(jQuery,_);

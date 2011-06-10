@@ -41,6 +41,16 @@ body {
 	font-weight: bold;
 }
 
+.legend .task-types li {
+	list-style-type: none;
+}
+
+.legend .task-char {
+	font-family: monospace;
+	font-size: 1.3em;
+	padding-right: 15px;
+}
+
 .legend .who {
 	color: #666;
 	margin-top: 15px;
@@ -55,13 +65,30 @@ body {
 	text-decoration: none;
 }
 
-#editor {
-  width: 95%;
+.content {
+	width: 95%;
   background-color: #fff;
   border-radius: 5px;
   margin: 0 auto;
-  min-height: 450px;
 	padding: 5px;
+}
+
+#editor {
+  min-height: 450px;
+}
+
+#apology {
+	padding: 40px 5px 0px 5px;
+  min-height: 80px;
+	font-size: 1.3em;
+	color: #444;
+	text-align: center;
+}
+
+/** Finally, some tasks! **/
+
+.task {
+	font-family: 'Courier New', monospace;
 }
 
 .pending {
@@ -88,7 +115,7 @@ body {
 }
 
 .group {
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 
 .indent {
