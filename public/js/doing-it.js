@@ -29,12 +29,23 @@
 			rows().each(function(i,el) {
 				var $row = $(el);
 				$row.removeClass(); //Safari will otherwise keep appending the classes of the previous ones
-				var type = self.types[$row.text().charAt(0)];
-				if(type) {
-					$row.addClass(type).addClass('task');
-				}
+				renderTask($row)
+				renderUnknown($row);
 			});
 		};
+		
+		var renderTask = function($row) {
+			var type = self.types[$row.text().charAt(0)];
+			if(type) {
+				$row.addClass(type).addClass('task');
+			}
+		};
+		
+		var renderUnknown = function($row) {
+			if(!$row.attr('class')) {
+				$row.addClass('unknown');
+			}
+		}
 		
 		var saveToLocalStorage = function() {
 			var items = [];

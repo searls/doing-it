@@ -24,7 +24,7 @@ body {
 }
 
 .pending {
-	font-weight: bold;
+/*	font-weight: bold;*/
 }
 
 .finished {
@@ -33,5 +33,15 @@ body {
 }
 
 .blocked {
-	color: #f55;
+	background-color: #fcc;
+}
+
+.unknown {
+	font-style: italic;
+	color: #555;
+}
+
+.group {
+	font-style:italic;
+	font-size: 1.;
 }
