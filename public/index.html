@@ -9,22 +9,45 @@
   <script type="text/javascript" src="js/doing-it.js"></script>
 </head>
 <body>
-  <div class="title">Doing It</div>
+  <div class="title">doing it</div>
   <div id="editor" contenteditable></div>
   <div class="legend">
-    <div>Ahoy!</div>
-      <span>Here, each line represents a task, group, or comment.</span>
-    <div>Tasks</div>
-    <span>The first character of each line indicates the status of the task.</span>
-    <ul>
-        <li><span class="pending">- an unfinished task</span></li>
-        <li><span class="finished">/ a finished task</span></li>
-        <li><span class="blocked"># a blocked task</span></li>
-        <li><span class="important">! a really important task</span></li>
-    </ul>
-    <div>Groups</div>
-      <span>You can group tasks with a line that ends with a colon (<code>:</code>).</span>
-    <div>Comments</div>
-      <span>Any line that isn't a valid task or a valid group is rendered as an italicized comment.</span>
+    <h1>Usage</h1>
+    <div class="section">
+      <div><em>Doing It</em> is a non-app for keeping track of tasks. In the editor above, just type stuff and it styles it for you. Each line you type represents a task, a group of tasks, or a comment. It will saves your tasks too. (Go ahead! Close the window, come back, and your tasks will still be here, just as you left them)</div>
+    </div>
+    <div class="sub section">
+      <h2>Tasks</h2>
+      <span>The first character of each line indicates the status of the task.</span>
+      <ul>
+          <li><span class="pending">- an unfinished task</span></li>
+          <li><span class="finished">/ a finished task</span></li>
+          <li><span class="blocked"># a blocked task</span></li>
+          <li><span class="important">! a really important task</span></li>
+      </ul>
+    </div>
+    <div class="sub section">
+      <h2>Groups</h2>
+      <div>You can group tasks with a line that ends with a colon, like so:</div>
+      <div class="example indent">
+        <div class="comment group">Project A:</div>
+        <div class="pending task indent">- Find a better project name</div>
+        <div class="finished task indent">/ Figure out what to build</div>
+        <div class="blocked task indent"># tweet about it being done</div>
+      </div>
+    </div>
+    <div class="sub section">
+      <h2>Comments</h2>
+      <div>Any line that isn't a task or a group is rendered as an <span class="comment">italicized comment</span>.</div>
+    </div>
+    <div class="sub section">
+      <h2>Caveats</h2>
+      <ul>
+        <li>Sorry, but <em>Doing It</em> will only work with Safari and Chrome</li>
+      </ul>
+    </div>
+    <div class="sub section">
+      <div class="who">brought to you by <a href="http://twitter.com/searls">@searls</a> via <a href="http://pillartechnology.com">pillar</a></div>
+    </div>
   </div>
 </body>

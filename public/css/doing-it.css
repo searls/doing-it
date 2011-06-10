@@ -1,26 +1,58 @@
 body {
   font-family: Helvetica, sans-serif;
-  background-color: #ccc;
+  background-color: #444;
 }
 .title {
-  font-size: 1.5em;
+	color: #fff;
+  font-size: 1.8em;
   padding: 10px;
 }
+
 .legend {
 	margin: 0 auto;
 	margin-top: 30px;
 	background-color: #fff;
 	width: 650px;
-	padding: 10px;
+	padding: 5px 0px 5px 10px;
 	border-radius: 5px;
 }
-.legend div {
+
+.legend .section {
 	margin: 15px 0px 15px 0px;
+	line-height: 1.5;	
+}
+
+.legend .sub {
+	padding: 0px 15px 0px 15px;
+}
+
+.legend .example {
+	margin-top: 10px;
+	border: 1px dotted #000;
+}
+
+.legend h1 {
+	font-size: 1.8em;
+	font-weight: bold;
+}
+
+.legend h2 {
 	font-size: 1.2em;
 	font-weight: bold;
 }
-.legend span {
-	padding-left: 20px;
+
+.legend .who {
+	color: #666;
+	margin-top: 15px;
+	text-align: center;
+}
+
+.legend .who a {
+	color: #666;
+}
+
+.legend .who a:hover {
+	text-decoration: none;
 }
 
 #editor {
@@ -28,7 +60,7 @@ body {
   background-color: #fff;
   border-radius: 5px;
   margin: 0 auto;
-  min-height: 350px;
+  min-height: 450px;
 	padding: 5px;
 }
 
@@ -45,18 +77,17 @@ body {
 }
 
 .important {
-	background-color: #f66;
+	background-color: #f22;
 	color: #fff;
 	font-weight: bold;
 }
 
-.unknown {
+.comment {
 	font-style: italic;
 	color: #555;
 }
 
 .group {
-	font-style:italic;
 	font-size: 1.2em;
 }
 

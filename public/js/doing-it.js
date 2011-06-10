@@ -8,8 +8,7 @@
 				'!': 'important'
 			}
 		};
-		
-		
+				
 		self.init = function() {
 			restoreFromLocalStorage();
 			self.doIt();
@@ -23,11 +22,12 @@
 		};
 		
 		var wrapAnyRawTextInADiv = function() {
-			//Safari wraps each newline in a div, except it always leaves the first one naked
+			//Webkit wraps each newline in a div, except it always leaves the first one naked
 			$editor.contents().filter(function(){ return this.nodeType == 3; }).wrap('<div></div>');
 		}
 		
 		var unwrapInappropriatelyNestedContent = function() {
+			//Webkit will also wrap text in spans if a user backspaces a styled line into the line above it
 			$editor.find('> div span').contents().unwrap();
 		}
 		
@@ -36,7 +36,7 @@
 			rows().each(function(i,el) {
 				var $row = $(el);
 				renderTask($row);
-				renderUnknown($row);
+				renderComment($row);
 			});
 			
 			renderGroups();
@@ -68,8 +68,9 @@
 							var $currentSibling = $nextSiblings.filter(':eq('+i+')');
 							if(!$currentSibling.text()) {
 								break;
+							} else {
+								$currentSibling.addClass('indent');
 							}
-							$currentSibling.addClass('indent');
 						};
 					}
 				}
@@ -77,9 +78,9 @@
 			rows().filter('.group').removeClass('indent');
 		};
 		
-		var renderUnknown = function($row) {
+		var renderComment = function($row) {
 			if(!$row.attr('class')) {
-				$row.addClass('unknown');
+				$row.addClass('comment');
 			}
 		}
 		
