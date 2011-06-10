@@ -36,6 +36,7 @@
 			render(tasks);
 			render(groups);
 			render(comments);
+			render(dates);
 		};
 		
 		var render = function(thingToRender) {
@@ -64,7 +65,7 @@
 				var $nextSiblings = $row.find('~ *');
 				for (var i=0; i < $nextSiblings.length; i++) {
 					var $currentSibling = $nextSiblings.filter(':eq('+i+')');
-					if(!$currentSibling.text()) {
+					if(!$currentSibling.prev().text()) {
 						break;
 					} else {
 						$currentSibling.addClass('indent');
@@ -83,6 +84,13 @@
 				$row.addClass('comment');
 			}
 		}
+		
+		var dates = function($row) {
+			var date = Date.parse(_($row.text().match(/{(.*)}/) || []).last());
+			if(date && date < Date.today().add(-1).day() && !$row.hasClass('finished')) {
+				$row.addClass('overdue');
+			}
+		};
 		
 		var saveToLocalStorage = function() {
 			var items = [];

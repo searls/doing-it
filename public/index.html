@@ -5,7 +5,8 @@
 
   <script type="text/javascript" src="js/vendor/underscore-min.js"></script>
   <script type="text/javascript" src="js/vendor/jquery-1.6.1.min.js"></script>
-  <script type="text/javascript" src="js/vendor/json2.js"></script>  
+  <script type="text/javascript" src="js/vendor/json2.js"></script>
+  <script type="text/javascript" src="js/vendor/date.js"></script>
   <script type="text/javascript" src="js/doing-it.js"></script>
 </head>
 <body>
@@ -39,6 +40,17 @@
         <div class="blocked task indent"># tweet about it being done</div>
       </div>
     </div>
+    <div class="sub section">
+      <h2>Due Dates</h2>
+      <div>You can assign a due date by placing a date inside curly braces (e.g. <code>{12/21/2012}</code>) anywhere in a task. Once the task is overdue, it'll be highlighted, as seen below: </div>
+      <div class="example indent">
+        <div class="group overdue">If this project ain't done by {1999}, it's late:<br></div>
+        <div class="pending task indent overdue">- A normal, overdue task {5/26/2007}&nbsp;</div>
+        <div class="important task indent overdue">! Overdue important tasks show yellow text {1/2/2000}&nbsp;<br></div>
+        <div class="finished task indent">/ Finished overdue tasks look the same as always {1/15/1985}</div>
+        <div class="pending task indent overdue">- it can recognize some crazy dates, too {2 days ago}</div>
+      </div>
+    </div>    
     <div class="sub section">
       <h2>Comments</h2>
       <div>Any line that isn't a task or a group is rendered as an <span class="comment">italicized comment</span>.</div>

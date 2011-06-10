@@ -113,6 +113,15 @@ body {
 	font-weight: bold;
 }
 
+.overdue {
+	background: #ff9;
+}
+
+.overdue.important {
+	background: #f22;
+	color: #ff0;
+}
+
 .comment {
 	font-style: italic;
 	color: #555;
