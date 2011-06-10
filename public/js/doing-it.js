@@ -65,7 +65,7 @@
 				var $nextSiblings = $row.find('~ *');
 				for (var i=0; i < $nextSiblings.length; i++) {
 					var $currentSibling = $nextSiblings.filter(':eq('+i+')');
-					if(!$currentSibling.text()) {
+					if(shouldNotIndent($currentSibling)) {
 						break;
 					} else {
 						$currentSibling.addClass('indent');
@@ -78,6 +78,10 @@
 			var text = $.trim($row.text());
 			return text.charAt(text.length-1) === ':';
 		};
+		
+		var shouldNotIndent = function($row) {
+			return $row.prev().length === 0 ? !$row.text() : !$row.prev().text();
+		}
 		
 		var comments = function($row) {
 			if(!$row.hasClass('task') && !$row.hasClass('group')) {
