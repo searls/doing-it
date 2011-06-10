@@ -1,0 +1,16 @@
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #ccc;
+}
+.title {
+  font-size: 1.5em;
+  padding: 10px;
+}
+#editor {
+  width: 95%;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 0 auto;
+  min-height: 500px;
+	padding: 5px;
+}

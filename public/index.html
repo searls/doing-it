@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+  <title>Doing It</title>
+  <link rel="stylesheet" type="text/css" href="css/doing-it.css" />
+
+  <script type="text/javascript" src="js/vendor/underscore-min.js"></script>
+  <script type="text/javascript" src="js/vendor/jquery-1.6.1.min.js"></script>
+  <script type="text/javascript" src="js/vendor/json2.js"></script>  
+  <script type="text/javascript" src="js/doing-it.js"></script>
+</head>
+<body>
+  <div class="title">Doing It</div>
+  <div id="editor" contenteditable></div>
+  <div id="legend">
+    <span>Each line represents a task. The first character of each line indicates the status of the task.</span>
+    <ul>
+      <li>- an unfinished task</li>
+      <li>/ a finished task</li>
+      <li># a blocked task</li>
+    </ul>
+    <span>Some advanced stuff.</span>
+    <ul>
+      <li>-[sometag] a task with an identifier of `sometag`</li>
+      <li>+(sometag) a task that depends on another task tagged as `sometag`</li>
+    </ul>
+    
+  </div>
+</body>
