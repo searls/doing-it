@@ -65,7 +65,7 @@
 				var $nextSiblings = $row.find('~ *');
 				for (var i=0; i < $nextSiblings.length; i++) {
 					var $currentSibling = $nextSiblings.filter(':eq('+i+')');
-					if(!$currentSibling.prev().text()) {
+					if(!$currentSibling.text()) {
 						break;
 					} else {
 						$currentSibling.addClass('indent');
