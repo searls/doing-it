@@ -121,3 +121,7 @@ body {
 .indent {
 	padding-left: 15px;
 }
+
+.group.indent {
+	padding-left: 0px;
+}

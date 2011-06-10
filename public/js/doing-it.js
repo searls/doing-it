@@ -36,7 +36,6 @@
 			render(tasks);
 			render(groups);
 			render(comments);
-			rows().filter('.group').removeClass('indent');
 		};
 		
 		var render = function(thingToRender) {
