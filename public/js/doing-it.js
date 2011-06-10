@@ -4,7 +4,8 @@
 			types: {
 				'-': 'pending',
 				'/': 'finished',
-				'#': 'blocked'
+				'#': 'blocked',
+				'!': 'important'
 			}
 		};
 		
@@ -16,6 +17,7 @@
 		
 		self.doIt = function() {
 			wrapAnyRawTextInADiv();
+			unwrapInappropriatelyNestedContent();
 			decorateLines();
 			saveToLocalStorage();
 		};
@@ -23,6 +25,10 @@
 		var wrapAnyRawTextInADiv = function() {
 			//Safari wraps each newline in a div, except it always leaves the first one naked
 			$editor.contents().filter(function(){ return this.nodeType == 3; }).wrap('<div></div>');
+		}
+		
+		var unwrapInappropriatelyNestedContent = function() {
+			$editor.find('> div span').contents().unwrap();
 		}
 		
 		var decorateLines = function() {

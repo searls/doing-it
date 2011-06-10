@@ -28,7 +28,7 @@ body {
   background-color: #fff;
   border-radius: 5px;
   margin: 0 auto;
-  min-height: 500px;
+  min-height: 350px;
 	padding: 5px;
 }
 
@@ -41,7 +41,13 @@ body {
 }
 
 .blocked {
-	background-color: #fcc;
+	color: #f66;
+}
+
+.important {
+	background-color: #f66;
+	color: #fff;
+	font-weight: bold;
 }
 
 .unknown {
