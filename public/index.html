@@ -12,17 +12,18 @@
   <div class="title">Doing It</div>
   <div id="editor" contenteditable></div>
   <div class="legend">
-    <span>Each line represents a task. The first character of each line indicates the status of the task.</span>
+    <div>Ahoy!</div>
+      <span>Here, each line represents a task, group, or comment.</span>
+    <div>Tasks</div>
+    <span>The first character of each line indicates the status of the task.</span>
     <ul>
-      <li>- an unfinished task</li>
-      <li>/ a finished task</li>
-      <li># a blocked task</li>
+        <li>- an unfinished task</li>
+        <li>/ a finished task</li>
+        <li># a blocked task</li>
     </ul>
-    <span>Some advanced stuff.</span>
-    <ul>
-      <li>-[sometag] a task with an identifier of `sometag`</li>
-      <li>+(sometag) a task that depends on another task tagged as `sometag`</li>
-    </ul>
-    
+    <div>Groups</div>
+      <span>You can group tasks with a line that ends with a colon (<code>:</code>).</span>
+    <div>Comments</div>
+      <span>Any line that isn't a valid task or a valid group is rendered as an italicized comment.</span>
   </div>
 </body>

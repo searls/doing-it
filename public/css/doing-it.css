@@ -10,10 +10,19 @@ body {
 	margin: 0 auto;
 	margin-top: 30px;
 	background-color: #fff;
-	width: 400px;
+	width: 650px;
 	padding: 10px;
 	border-radius: 5px;
 }
+.legend div {
+	margin: 15px 0px 15px 0px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.legend span {
+	padding-left: 20px;
+}
+
 #editor {
   width: 95%;
   background-color: #fff;
@@ -24,7 +33,6 @@ body {
 }
 
 .pending {
-/*	font-weight: bold;*/
 }
 
 .finished {
@@ -43,5 +51,9 @@ body {
 
 .group {
 	font-style:italic;
-	font-size: 1.;
+	font-size: 1.2em;
+}
+
+.indent {
+	padding-left: 15px;
 }
