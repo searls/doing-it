@@ -85,6 +85,10 @@ body {
 	text-align: center;
 }
 
+.hidden {
+	display: none;
+}
+
 /** Finally, some tasks! **/
 
 .task {
