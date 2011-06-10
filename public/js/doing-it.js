@@ -30,8 +30,10 @@
 				var items = JSON.parse(localStorage['items']);
 				_(items).each(function(item) {
 					item = !item ? "<br/>" : item;
-					$('#editor').append('<div>'+item+'</div>')
+					$('#editor').append('<div>'+item+'</div>');
 				});
+			} else {
+				$('#editor').append('<div><br/></div>');
 			}
 		};
 		
@@ -41,6 +43,6 @@
 	$(function() {
 		var doingIt = DoingIt();
 		doingIt.init();
-		$('#editor').live('keypress',doingIt.doIt);
+		$('#editor').live('keydown',doingIt.doIt);
 	});
 })(jQuery,_);
