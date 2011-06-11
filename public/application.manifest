@@ -1,0 +1,11 @@
+CACHE MANIFEST
+# manifest 1
+
+index.html
+favicon.ico
+css/doing-it.css
+js/doing-it.js
+js/vendor/date.js
+js/vendor/jquery-1.6.1.min.js
+js/vendor/json2.js
+js/vendor/underscore-min.js
